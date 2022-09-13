@@ -11,10 +11,6 @@ for vid in pl.videos:
         print(vid.title)
         vid.register_on_progress_callback(on_progress)
         
-        #for your choice resolution 
-        #vid.streams.filter(res="360p").download(filename)
-        
-        #for get highest resolution 
         vid.streams.get_highest_resolution().download(filename)
         print(" ")
         x+=1
