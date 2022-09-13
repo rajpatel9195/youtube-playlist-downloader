@@ -10,6 +10,11 @@ for vid in pl.videos:
         print(x , " is dwonloading... "  ,  "File size: " , str(round( vid.streams.get_highest_resolution().filesize / (1024 * 1024), 3)) , " MB")    
         print(vid.title)
         vid.register_on_progress_callback(on_progress)
+        
+        #for your choice resolution 
+        #vid.streams.filter(res="360p").download(filename)
+        
+        #for get highest resolution 
         vid.streams.get_highest_resolution().download(filename)
         print(" ")
         x+=1
